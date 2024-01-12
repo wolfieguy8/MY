@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Date Invitation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        #invitation {
+            margin: 50px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #cat {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        #yes-button, #no-button {
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        #no-button:hover {
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="invitation">
+        <h2>Hi there Kaa!</h2>
+        <p>I hope you're having a wonderful day. How about we go for a chai tomorrow?</p>
+        <p><strong>Can't wait to see you!</strong></p>
+        <img id="cat" src="https://media.tenor.com/SwQT4BBJS0oAAAAj/peach-and-goma-peach-goma.gif" alt="Cute Animated Cat">
+        <br>
+        <button id="yes-button" onclick="alert('Yay! Looking forward to it!')">Yes</button>
+        <button id="no-button" onclick="alert('Aw, maybe next time.')" onmouseover="moveNoButton()">No</button>
+        <script>
+            function moveNoButton() {
+                var button = document.getElementById('no-button');
+                var body = document.body;
+                var maxX = body.clientWidth - button.clientWidth;
+                var maxY = body.clientHeight - button.clientHeight;
+                var randomX = Math.floor(Math.random() * maxX);
+                var randomY = Math.floor(Math.random() * maxY);
+
+                button.style.position = 'absolute';
+                button.style.left = randomX + 'px';
+                button.style.top = randomY + 'px';
+            }
+        </script>
+    </div>
+
+</body>
+</html>
